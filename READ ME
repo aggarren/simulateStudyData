@@ -1,0 +1,41 @@
+FILE CONTENTS:
+
+"dweck averages.csv"
+	contains the mean and confidence interval data
+	for each character for each item
+	File layout:
+		column1: items
+		column2: average loadings for items
+		column3: response means for stapler character
+		column4: upper value from confidence interval for column 3
+		column5: same as column3 but for car character
+		column6: same as column4 but for car character
+		 . . . : do for each character
+		column42: same as column3 but for adult character
+		column43: same as column4 but for adult character
+
+"getRaw.R"
+	simulates raw data using data from "dweck averages.csv"
+	stores data for each character in a csv labeled "columnNumber character.csv"
+
+"fullSimulated.R"
+	combines all simulated data from each character csv into one dataframe
+	stores combined data into csv labeled "simulatedDataDweck.csv"
+
+"pcaOnRawData.R"
+	uses combined simulation data and performs PCA
+	loadings are stored in a csv labeled "loadingsSimulated.csv
+
+
+TO RUN:
+
+Have "dweck averages.csv" in working directory
+
+Run getRaw.R
+	output csv files (for each character) will appear in working directory
+
+Run fullSimulated.R
+	output csv file "simulatedDataDweck.csv" will appear in working directory
+
+Run pcaOnRawData.R
+	output csv file "loadingsSimulated.csv" will appear in working directory
