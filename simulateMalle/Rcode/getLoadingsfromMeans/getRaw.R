@@ -1,3 +1,21 @@
+########################
+### Experiment setup ###
+########################
+
+whoami <- Sys.info()[["user"]]
+if (whoami == "trafton") {
+    experimentName <- "simulateStudyData/simulateMalle/"  ## NOT ideal
+    workingDirectory <- "~/Documents/graphics/AnnaGarren/"
+}
+## source(paste0(workingDirectory, "R/helper.R"))
+## graphSaveDirectory <- paste0(workingDirectory, "graphs/", experimentName, "/")
+## dataDirectory <- paste0(workingDirectory, "data/raw/", experimentName, "/")
+setwd(paste0(workingDirectory, "/", experimentName))
+## VerifyPathIsSafe(graphSaveDirectory)
+## VerifyPathIsSafe(dataDirectory)
+
+## source(paste0(workingDirectory, "R/GetData", experimentName, ".R"))
+
 #NEED "dweck averages.csv" in working directory
 library(readr)
 library(faux)
@@ -41,8 +59,8 @@ while(character <=7) {
   if(c== 3) { write.table(matrix,"3robot.csv",row.names=FALSE,sep=",")}
   if(c== 5) {write.table(matrix,"5child.csv",row.names=FALSE,sep=",")}
   if(c== 7) {write.table(matrix,"7adult.csv",row.names=FALSE,sep=",")}
-  
+
     character = character + 2
-  
+
 }
 #next run fullSimulated.R
